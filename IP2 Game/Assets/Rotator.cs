@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Rotator : MonoBehaviour {
 
-    //public float rotationTime = 0.5f;
-    //public float rotationAgle = 90f;
+    //public float rotationTime = 1.0f;
+    public float rotationAngle = 90f;
 
     public void CubePieceRotation()
     {
-        StartCoroutine(NiceRotation(0f, 90f, 1.0f));
+        StartCoroutine(NiceRotation(0f, rotationAngle, 1.0f));
     }
   
     IEnumerator  NiceRotation(float start, float end, float maxTime)
@@ -22,7 +22,7 @@ public class Rotator : MonoBehaviour {
             print("called");
             Quaternion rot = GetComponent<Transform>().rotation;
             
-            rot.x = Mathf.Lerp(start, end, t);
+            rot.x = Mathf.Lerp(start, end, t*t*t);
 
             transform.SetPositionAndRotation(transform.position, Quaternion.Euler(rot.x, rot.y, rot.z));
 
