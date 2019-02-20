@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Rotator : MonoBehaviour {
-
-    //public float rotationTime = 1.0f;
+    
     public float rotationAngle = 90f;
+    public float rotationStart = 0f;
 
     public void CubePieceRotation()
     {
-        StartCoroutine(NiceRotation(0f, rotationAngle, 1.0f));
+        StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
     }
   
     IEnumerator  NiceRotation(float start, float end, float maxTime)
@@ -30,19 +30,14 @@ public class Rotator : MonoBehaviour {
             {
                 rot.x = end;
             }
+            NewRotValues();
             yield return null;
         }
     }
-    
-    
-    /*  public void CubePieceRotation()
-        {
-            if (gameObject.tag == "CubePiece")
-            {
-                Quaternion target = Quaternion.Euler(90, 0, 0);
-                transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * rotationTime);
-            }
-        }
-        
-    */
+
+    public void NewRotValues()
+    {
+        rotationStart = rotationAngle;
+        rotationAngle += 90f;
+    }
 }
