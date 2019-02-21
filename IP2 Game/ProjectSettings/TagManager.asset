@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CubePiece
+  - ObjectTrigger
+  - Player2
   layers:
   - Default
   - TransparentFX
