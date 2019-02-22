@@ -30,14 +30,17 @@ public class Rotator : MonoBehaviour {
             {
                 rot.x = end;
             }
-            NewRotValues();
             yield return null;
         }
+        NewRotValues();
     }
 
     public void NewRotValues()
     {
-        rotationStart = rotationAngle;
-        rotationAngle += 90f;
+        if (rotationAngle != 0)
+        {
+            rotationStart = rotationAngle;
+            rotationAngle += 90f;
+        }
     }
 }

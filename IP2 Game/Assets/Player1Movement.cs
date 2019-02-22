@@ -18,9 +18,8 @@ public class Player1Movement : MonoBehaviour
     void Update()
     {
         movementVelocity = Vector3.zero;
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-
             movementVelocity.z = 1.0f;
         }
         if (Input.GetKey(KeyCode.S))
@@ -37,13 +36,13 @@ public class Player1Movement : MonoBehaviour
         }
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
 
-        if(Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             transform.Rotate(0.0f, 200 * Time.deltaTime, 0.0f);
-        }else if (Input.GetKey(KeyCode.Q))
+        }
+        else if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
         }
     }
-
 }

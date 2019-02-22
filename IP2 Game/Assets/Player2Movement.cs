@@ -18,7 +18,6 @@ public class Player2Movement : MonoBehaviour {
         movementVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-
             movementVelocity.z = 1.0f;
         }
         if (Input.GetKey(KeyCode.DownArrow))
