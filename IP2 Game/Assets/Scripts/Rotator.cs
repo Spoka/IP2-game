@@ -8,6 +8,19 @@ public class Rotator : MonoBehaviour {
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            float t = 0;
+            t += Time.deltaTime;
+            if (t == 3f)
+            {
+                StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
+            }
+        }
+    }
+
     public void CubePieceRotation()
     {
         StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
@@ -18,7 +31,7 @@ public class Rotator : MonoBehaviour {
         float t = 0;
         while (t < maxTime)
         {
-            t += Time.deltaTime*2;
+            t += Time.deltaTime * 2;
             print("called");
             Quaternion rot = GetComponent<Transform>().rotation;
             
