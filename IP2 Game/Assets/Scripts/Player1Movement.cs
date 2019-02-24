@@ -18,19 +18,19 @@ public class Player1Movement : MonoBehaviour
     void Update()
     {
         movementVelocity = Vector3.zero;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A))
         {
             movementVelocity.z = 1.0f;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.D))
         {
             movementVelocity.z = -1.0f;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W))
         {
             movementVelocity.x = 1.0f;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.S))
         {
             movementVelocity.x = -1.0f;
         }
