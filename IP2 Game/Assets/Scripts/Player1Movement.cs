@@ -43,6 +43,6 @@ public class Player1Movement : MonoBehaviour
         else if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        }
+        } 
     }
 }

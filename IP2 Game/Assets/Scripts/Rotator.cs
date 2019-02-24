@@ -7,16 +7,19 @@ public class Rotator : MonoBehaviour {
     
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
+    public float autoRotationTimer = 3.0f;
+    float t = 0;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay (Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Player2")
         {
-            float t = 0;
             t += Time.deltaTime;
-            if (t == 3f)
+            if (t >= autoRotationTimer)
             {
+                print("we fratm");
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
+                t = 0;
             }
         }
     }
@@ -31,11 +34,11 @@ public class Rotator : MonoBehaviour {
         float t = 0;
         while (t < maxTime)
         {
-            t += Time.deltaTime * 2;
-            print("called");
+            t += Time.deltaTime*2;
+            //print("called");
             Quaternion rot = GetComponent<Transform>().rotation;
             
-            rot.x = Mathf.Lerp(start, end, t*t*t);
+            rot.x = Mathf.Lerp(start, end, t*t);
 
             transform.SetPositionAndRotation(transform.position, Quaternion.Euler(rot.x, rot.y, rot.z));
 
