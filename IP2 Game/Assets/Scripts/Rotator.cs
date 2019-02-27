@@ -8,18 +8,44 @@ public class Rotator : MonoBehaviour {
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
     public float autoRotationTimer = 3.0f;
-    float t = 0;
+    float rT = 0;
 
     private void OnTriggerStay (Collider other)
     {
         if (other.tag == "Player" || other.tag == "Player2")
         {
-            t += Time.deltaTime;
-            if (t >= autoRotationTimer)
+            rT += Time.deltaTime;
+            if (rT >= autoRotationTimer)
             {
                 print("we fratm");
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
-                t = 0;
+                rT = 0;
+            }
+        }
+    /*   else
+        {
+            other.transform.parent = gameObject.transform;  
+        }  */
+    }
+     
+    //PARENTING CODE NEEDED
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Stuff")
+        {
+            other.transform.parent = gameObject.transform;
+        }
+    }*/
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" || other.tag == "Player2")
+        {
+            if (rT <= 1.5f)
+            {
+                rT = 0;
             }
         }
     }
