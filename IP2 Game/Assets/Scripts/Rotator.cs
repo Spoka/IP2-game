@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Rotator : MonoBehaviour {
-    
+
+    public PlayerScript playerScript;
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
     public float autoRotationTimer = 3.0f;
@@ -22,21 +23,19 @@ public class Rotator : MonoBehaviour {
                 rT = 0;
             }
         }
-    /*   else
-        {
-            other.transform.parent = gameObject.transform;  
-        }  */
     }
-     
-    //PARENTING CODE NEEDED
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Stuff")
         {
-            other.transform.parent = gameObject.transform;
+            if (playerScript.isParent == false)
+            {
+                print("suca");
+                other.transform.SetParent(gameObject.transform);
+            }           
         }
-    }*/
+    }
 
 
     private void OnTriggerExit(Collider other)
