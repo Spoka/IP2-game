@@ -7,6 +7,7 @@ TagManager:
   - CubePiece
   - ObjectTrigger
   - Player2
+  - Stuff
   layers:
   - Default
   - TransparentFX
