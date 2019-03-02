@@ -7,19 +7,34 @@ public class Player1Movement : MonoBehaviour
 
     bool canMove = true;
 
-    public float coolDown = 0.5f;
+    public float coolDown = 0.15f;
 
     public float movementSpeed;
     Vector3 movementVelocity;
+
+    public float xMin;
+    public float xMax;
+    public float zMin;
+    public float zMax;
+    public float yValue;
+    public Rigidbody rb;
 
 
     // Use this for initialization
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
-    void Update()
+   
+    void FixedUpdate()
     {
+        GetComponent<Rigidbody>().position = new Vector3
+       (
+           Mathf.Clamp(GetComponent<Rigidbody>().position.x, xMin, xMax),
+           yValue,
+           Mathf.Clamp(GetComponent<Rigidbody>().position.z, zMin, zMax)
+       );
+
         movementVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.A) && canMove)
         {
@@ -58,7 +73,9 @@ public class Player1Movement : MonoBehaviour
         else if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        } 
+        }
+
+       
     }
 
     void CooledDown()
