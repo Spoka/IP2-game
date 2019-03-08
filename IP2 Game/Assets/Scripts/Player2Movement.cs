@@ -18,19 +18,19 @@ public class Player2Movement : MonoBehaviour {
         movementVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            movementVelocity.z = 1.0f;
+            movementVelocity.x = 1.0f;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            movementVelocity.z = -1.0f;
+            movementVelocity.x = -1.0f;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            movementVelocity.x = 1.0f;
+            movementVelocity.z = -1.0f;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            movementVelocity.x = -1.0f;
+            movementVelocity.z = 1.0f;
         }
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
 

@@ -15,7 +15,7 @@ public class Rotator : MonoBehaviour {
     //When player1 stands on a section for 2 or more seconds, start rotation coroutine 
     private void OnTriggerStay (Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player2")
         {
             rT += Time.deltaTime;
             if (rT >= autoRotationTimer)
@@ -42,7 +42,7 @@ public class Rotator : MonoBehaviour {
     //Reset rotation timer if player1 exits the section
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player2")
         {
             if (rT <= 1.5f)
             {
@@ -51,17 +51,17 @@ public class Rotator : MonoBehaviour {
         }
     }
 
-    /*public void CubePieceRotation()
+    public void CubePieceRotation()
     {
         StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
-    }*/
+    }
   
 
     //Rotation coroutine --- Lerp the section, show rotation warning, call method that updates lerp values
     IEnumerator  NiceRotation(float start, float end, float maxTime)
     {
         float t = 0;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         while (t < maxTime)
         {

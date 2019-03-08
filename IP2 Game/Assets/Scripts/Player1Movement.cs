@@ -28,14 +28,10 @@ public class Player1Movement : MonoBehaviour
    
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().position = new Vector3
-       (
-           Mathf.Clamp(GetComponent<Rigidbody>().position.x, xMin, xMax),
-           yValue,
-           Mathf.Clamp(GetComponent<Rigidbody>().position.z, zMin, zMax)
-       );
+        GetComponent<Rigidbody>().position = new Vector3(Mathf.Clamp(GetComponent<Rigidbody>().position.x, xMin, xMax), yValue, Mathf.Clamp(GetComponent<Rigidbody>().position.z, zMin, zMax));
 
         movementVelocity = Vector3.zero;
+
         if (Input.GetKey(KeyCode.A) && canMove)
         {
             movementVelocity.z = 1.0f;
@@ -74,14 +70,10 @@ public class Player1Movement : MonoBehaviour
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
         }
-
-       
     }
 
     void CooledDown()
     {
-
         canMove = true;
-
     }
 }
