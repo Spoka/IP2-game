@@ -2069,6 +2069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d24873ed3cc952409cbbaaf4369bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 0}
   fearBar: {fileID: 746271250}
 --- !u!1 &1885464728
 GameObject:
