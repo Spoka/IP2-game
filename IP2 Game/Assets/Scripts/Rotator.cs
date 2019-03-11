@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Rotator : MonoBehaviour {
 
     public PlayerScript playerScript;
+    public Player2Script player2Script;
     public GameObject rotationWarning;
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
@@ -32,7 +33,7 @@ public class Rotator : MonoBehaviour {
     {
         if (other.tag == "Stuff")
         {
-            if (playerScript.isParent == false)
+            if (playerScript.isParent == false && player2Script.is2Parent == false)
             {
                 other.transform.SetParent(gameObject.transform);
             }           
@@ -61,7 +62,7 @@ public class Rotator : MonoBehaviour {
     IEnumerator  NiceRotation(float start, float end, float maxTime)
     {
         float t = 0;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1);
 
         while (t < maxTime)
         {

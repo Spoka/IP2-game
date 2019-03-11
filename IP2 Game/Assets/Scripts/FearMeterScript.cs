@@ -9,8 +9,8 @@ public class FearMeterScript : MonoBehaviour {
     public LifeLoss other;
 
     public Slider fearBar;
-    public static float fear;
-    float t = 10f;
+    public float fear;
+    private const float timeLapse = 0.5f;
 
     void Start()
     {
@@ -24,17 +24,22 @@ public class FearMeterScript : MonoBehaviour {
         {
             other.LoseHealth();
         }
+
+        fear -= timeLapse * Time.deltaTime;
+
     }
     private void OnTriggerExit(Collider other)
     {
-
+        
         if (other.gameObject.tag == "Player")
         {
-            fear = fear - t / Time.deltaTime;
+            //fear = fear - lT / Time.deltaTime;
+            fear -= timeLapse * Time.deltaTime;
+        }
+
+        if(fear == 50)
+        {
+            print("fear to 50");
         }
     }
-
-
-    
-    
 }

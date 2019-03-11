@@ -999,7 +999,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 539517584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.535, y: 0, z: 0}
+  m_LocalPosition: {x: -0.556, y: 0, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children:
   - {fileID: 1202696739}
@@ -1386,6 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  player2Script: {fileID: 0}
   rotationWarning: {fileID: 0}
   rotationAngle: 0
   rotationStart: 0
@@ -1901,7 +1902,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202696738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.173, y: -8.326, z: -15.295}
+  m_LocalPosition: {x: -7.11, y: -8.326, z: -15.295}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 539517585}
@@ -2078,13 +2079,13 @@ Transform:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1211053072}
-  m_LocalRotation: {x: -0, y: -0.99006814, z: -0, w: 0.14058861}
-  m_LocalPosition: {x: 12.965523, y: 18.638, z: 3.4485416}
+  m_LocalRotation: {x: -0, y: 0.712788, z: -0, w: 0.70137966}
+  m_LocalPosition: {x: 19.673893, y: 18.638, z: 11}
   m_LocalScale: {x: 0.1317334, y: 0.13173331, z: 0.1317334}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.924, z: 0}
 --- !u!1 &1240359454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1019283083}
+  player2Script: {fileID: 2043394308}
   rotationWarning: {fileID: 1974785981}
   rotationAngle: 90
   rotationStart: 0
@@ -2410,6 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1019283083}
+  player2Script: {fileID: 2043394308}
   rotationWarning: {fileID: 1974785981}
   rotationAngle: 90
   rotationStart: 0
@@ -2685,6 +2688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1019283083}
+  player2Script: {fileID: 2043394308}
   rotationWarning: {fileID: 1974785981}
   rotationAngle: 90
   rotationStart: 0
@@ -2910,6 +2914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1019283083}
+  player2Script: {fileID: 2043394308}
   rotationWarning: {fileID: 1974785981}
   rotationAngle: 90
   rotationStart: 0
@@ -3010,6 +3015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 0}
   fearBar: {fileID: 746271250}
+  fear: 0
 --- !u!1 &1863604372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,6 +3566,7 @@ GameObject:
   - component: {fileID: 2043394302}
   - component: {fileID: 2043394306}
   - component: {fileID: 2043394307}
+  - component: {fileID: 2043394308}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -3669,6 +3676,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &2043394308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043394301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cde3af33c1490543b435685cd7207c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is2Parent: 0
 --- !u!1 &2050103332
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,6 +3837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1019283083}
+  player2Script: {fileID: 2043394308}
   rotationWarning: {fileID: 1974785981}
   rotationAngle: 90
   rotationStart: 0
