@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FearMeterScript : MonoBehaviour {
-
+   
     // Use this for initialization
-    public LifeLoss other;
-
+  
+   
     public Slider fearBar;
     public static float fear;
     float t = 10f;
@@ -19,11 +19,9 @@ public class FearMeterScript : MonoBehaviour {
 
     void Update()
     {
+       
         fearBar.value = fear;
-    if (fear == 0f)
-        {
-            other.LoseHealth();
-        }
+   
     }
     private void OnTriggerExit(Collider other)
     {
@@ -32,6 +30,7 @@ public class FearMeterScript : MonoBehaviour {
         {
             fear = fear - t / Time.deltaTime;
         }
+    
     }
 
 

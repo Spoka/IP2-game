@@ -12,6 +12,10 @@ public class Rotator : MonoBehaviour {
     public float autoRotationTimer;
     float rT = 0;
 
+    public GameObject ImageOnPanel;  ///set this in the inspector
+    public Texture NewTexture;
+    private RawImage img;
+
     //When player1 stands on a section for 2 or more seconds, start rotation coroutine 
     private void OnTriggerStay (Collider other)
     {
@@ -23,6 +27,9 @@ public class Rotator : MonoBehaviour {
                 rotationWarning.SetActive(true);
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
                 rT = 0;
+                img = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+
+                img.texture = (Texture)NewTexture;
             }
         }
     }

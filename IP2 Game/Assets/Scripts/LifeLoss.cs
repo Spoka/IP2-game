@@ -5,28 +5,26 @@ using UnityEngine.UI;
 
 public class LifeLoss : MonoBehaviour
 {
-    public Slider healthBar;
-    public static int health;
+    public GameObject ImageOnPanel;  ///set this in the inspector
+    public Texture NewTexture;
+    private RawImage img;
 
     void Start()
+
     {
-        health = 100;
-    }
-    private void Update()
-    {
-        ChangeHealth();
-        healthBar.value = health;
-    }
-    void ChangeHealth()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            health = health - 20;
-        }
+       
     }
 
-    public void LoseHealth()
+
+    // Update is called once per frame
+    void Update()
     {
-        health = health - 20;
+        if (Input.GetKey(KeyCode.P))
+        {
+
+            img = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+
+            img.texture = (Texture)NewTexture;
+        }
     }
 }
