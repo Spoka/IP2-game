@@ -59,5 +59,14 @@ public class PlayerScript : MonoBehaviour {
 		{
 			Section5.CubePieceRotation();
 		}
-	}
+
+        if (Input.GetKey(KeyCode.Y))
+        {
+            Application.LoadLevel("GameOverScene");
+        }
+        if (Input.GetKey(KeyCode.N))
+        {
+            Application.LoadLevel("SuccessScreen");
+        }
+    }
 }

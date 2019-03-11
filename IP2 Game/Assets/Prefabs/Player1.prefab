@@ -193,6 +193,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isParent: 0
+  Section1: {fileID: 0}
+  Section2: {fileID: 0}
+  Section3: {fileID: 0}
+  Section4: {fileID: 0}
+  Section5: {fileID: 0}
 --- !u!114 &114357176308125632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,4 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183f46ec2a259ac4c835bb2d9cae6208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 0.15
   movementSpeed: 4
+  xMin: 0
+  xMax: 0
+  zMin: 0
+  zMax: 0
+  yValue: 0
+  rb: {fileID: 0}
