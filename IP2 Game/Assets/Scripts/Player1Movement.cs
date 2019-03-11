@@ -73,6 +73,16 @@ public class Player1Movement : MonoBehaviour
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
         }
+
+        if(Input.GetKey(KeyCode.Y))
+                {
+            Application.LoadLevel("GameOverScene");
+        }
+
+        if (Input.GetKey(KeyCode.U))
+        {
+            Application.LoadLevel("SuccessScreen");
+        }
     }
 
     void CooledDown()
