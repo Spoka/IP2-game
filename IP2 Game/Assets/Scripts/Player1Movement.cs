@@ -18,11 +18,13 @@ public class Player1Movement : MonoBehaviour
     public float zMax;
     public float yValue;
     public Rigidbody rb;
+    public Animation anim;
 
 
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent("Animation") as Animation;
         rb = GetComponent<Rigidbody>();
     }
    
@@ -34,6 +36,7 @@ public class Player1Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) && canMove)
         {
+           // anim.Play("Walking");
             movementVelocity.z = 1.0f;
             canMove = false;
 
