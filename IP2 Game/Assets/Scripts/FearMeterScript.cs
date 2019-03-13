@@ -7,11 +7,15 @@ public class FearMeterScript : MonoBehaviour {
 
     // Use this for initialization
     public LifeLoss other;
-    bool isOutside = false;
+
     public Slider fearBar;
     public float fear;
+<<<<<<< HEAD
 
     private const float timeLapse = 2.0f;
+=======
+    private const float timeLapse = 0.5f;
+>>>>>>> parent of 15efe47... fear meter working
 
 
     void Start()
@@ -21,12 +25,13 @@ public class FearMeterScript : MonoBehaviour {
 
     void Update()
     {
-        
+        fearBar.value = fear;
     if (fear == 0f)
         {
             other.LoseHealth();
         }
 
+<<<<<<< HEAD
 
         fear -= timeLapse * Time.deltaTime;
 
@@ -37,12 +42,17 @@ public class FearMeterScript : MonoBehaviour {
             fear -= timeLapse * Time.deltaTime;
         }
 
+=======
+        fear -= timeLapse * Time.deltaTime;
+
+>>>>>>> parent of 15efe47... fear meter working
     }
     private void OnTriggerExit(Collider other)
     {
         
         if (other.gameObject.tag == "Player")
         {
+<<<<<<< HEAD
 
             //fear = fear - lT / Time.deltaTime;
             fear -= timeLapse * Time.deltaTime;
@@ -50,21 +60,15 @@ public class FearMeterScript : MonoBehaviour {
             isOutside = true;
             print("fear working");
 
+=======
+            //fear = fear - lT / Time.deltaTime;
+            fear -= timeLapse * Time.deltaTime;
+>>>>>>> parent of 15efe47... fear meter working
         }
 
         if(fear == 50)
         {
             print("fear to 50");
-        }
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isOutside = false;
-            print("is working fine");
         }
     }
 }
