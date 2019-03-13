@@ -5,7 +5,6 @@ using UnityEngine;
 public class PuzzleScript : MonoBehaviour {
 
     public PlayerScript playerScript;
-    public Player2Script player2Script;
     // Use this for initialization
     void Start () {
 		
@@ -15,7 +14,7 @@ public class PuzzleScript : MonoBehaviour {
     {
         if (other.tag == "Stuff")
         {
-            if (playerScript.isParent == true || player2Script.is2Parent == true)
+            if (playerScript.isParent == true)
             {
                 other.transform.SetParent(gameObject.transform);
             }
