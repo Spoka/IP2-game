@@ -10,22 +10,18 @@ public class HealthScript : MonoBehaviour {
     int health;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         health = 3;
 	}
 
-    private void OnTriggerStay(Collider other)
+    public void GetDamage()
     {
-        if (other.gameObject.tag == "CubePiece")
-        {
-            if (rotatorScript.isRotating == true)
-            {
-                health--;
-                print("DAMAGE!!!");
-                rotatorScript.isRotating = false;
-            }
-        }
+        health--;
+        //rotatorScript.isRotating = false;
+        print("DAMGED!!!");
     }
+   
 
     // Update is called once per frame
     void Update () {

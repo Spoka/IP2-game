@@ -700,8 +700,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 1, z: 1.16}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.19, y: 1.1, z: 1.04}
+  m_Center: {x: -0, y: 0.06, z: 0}
 --- !u!23 &389148167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389148164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.174, y: 18.891, z: 10.345}
+  m_LocalPosition: {x: 12.478, y: 18.891, z: 8.099}
   m_LocalScale: {x: 0.28993246, y: 0.49350208, z: 0.35495603}
   m_Children: []
   m_Father: {fileID: 0}
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef15de7af7891845ad48ed8902ec8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatorScript: {fileID: 2142990851}
+  rotatorScript: {fileID: 0}
   fearScript: {fileID: 0}
 --- !u!1 &432830604
 GameObject:
@@ -2313,6 +2313,31 @@ Prefab:
       propertyPath: m_TagString
       value: CubePiece
       objectReference: {fileID: 0}
+    - target: {fileID: 114146547915061670, guid: a9b72d0ea16098e4aad1c26a12ec34ae,
+        type: 2}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 389148170}
+    - target: {fileID: 114986439819525718, guid: a9b72d0ea16098e4aad1c26a12ec34ae,
+        type: 2}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 389148170}
+    - target: {fileID: 114685618256914960, guid: a9b72d0ea16098e4aad1c26a12ec34ae,
+        type: 2}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 389148170}
+    - target: {fileID: 114106122394519176, guid: a9b72d0ea16098e4aad1c26a12ec34ae,
+        type: 2}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 389148170}
+    - target: {fileID: 114544977906511190, guid: a9b72d0ea16098e4aad1c26a12ec34ae,
+        type: 2}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 389148170}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b72d0ea16098e4aad1c26a12ec34ae, type: 2}
   m_IsPrefabAsset: 0
@@ -3425,7 +3450,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043394301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.46, y: 18.821, z: 6.335}
+  m_LocalPosition: {x: 12.46, y: 18.821, z: 7.629}
   m_LocalScale: {x: 0.2549632, y: 0.31932363, z: 0.24046667}
   m_Children:
   - {fileID: 1843214962}

@@ -7,6 +7,7 @@ public class Rotator : MonoBehaviour {
 
     public PlayerScript playerScript;
     public Player2Script player2Script;
+    public HealthScript healthScript;
     public GameObject rotationWarning;
     public float rotationAngle = 90f;
     public float rotationStart = 0f;
@@ -25,6 +26,14 @@ public class Rotator : MonoBehaviour {
                 rotationWarning.SetActive(true);
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
                 rT = 0;
+            }
+        }
+        if (other.tag == "Player" || other.tag == "Player2")
+        {
+            if (isRotating == true)
+            {
+                healthScript.GetDamage();
+                isRotating = false;
             }
         }
     }
@@ -84,7 +93,7 @@ public class Rotator : MonoBehaviour {
         }
         rotationWarning.SetActive(false);
         NewRotValues();
-        isRotating = false;
+        //isRotating = false;
     }
 
     //Update lerp values
