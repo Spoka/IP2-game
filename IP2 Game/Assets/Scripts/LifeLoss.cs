@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class LifeLoss : MonoBehaviour
 {
-    public Slider healthBar;
+    public RawImage Health;
     public static int health;
+    public Texture m_texture;
 
     void Start()
     {
-        health = 100;
+        Health = GetComponent<RawImage>();
+        Health.texture = m_texture;
     }
     private void Update()
     {
-        ChangeHealth();
-        healthBar.value = health;
+        //ChangeHealth();
+        // healthBar.value = health;
     }
     void ChangeHealth()
     {
