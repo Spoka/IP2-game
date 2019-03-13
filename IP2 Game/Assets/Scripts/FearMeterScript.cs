@@ -11,12 +11,16 @@ public class FearMeterScript : MonoBehaviour {
     public Slider fearBar;
     public float fear;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     private const float timeLapse = 2.0f;
 =======
     private const float timeLapse = 0.5f;
 >>>>>>> parent of 15efe47... fear meter working
 
+=======
+    private const float timeLapse = 0.5f;
+>>>>>>> parent of 15efe47... fear meter working
 
     void Start()
     {
@@ -32,6 +36,7 @@ public class FearMeterScript : MonoBehaviour {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         fear -= timeLapse * Time.deltaTime;
 
@@ -46,12 +51,17 @@ public class FearMeterScript : MonoBehaviour {
         fear -= timeLapse * Time.deltaTime;
 
 >>>>>>> parent of 15efe47... fear meter working
+=======
+        fear -= timeLapse * Time.deltaTime;
+
+>>>>>>> parent of 15efe47... fear meter working
     }
     private void OnTriggerExit(Collider other)
     {
         
         if (other.gameObject.tag == "Player")
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
             //fear = fear - lT / Time.deltaTime;
@@ -60,6 +70,10 @@ public class FearMeterScript : MonoBehaviour {
             isOutside = true;
             print("fear working");
 
+=======
+            //fear = fear - lT / Time.deltaTime;
+            fear -= timeLapse * Time.deltaTime;
+>>>>>>> parent of 15efe47... fear meter working
 =======
             //fear = fear - lT / Time.deltaTime;
             fear -= timeLapse * Time.deltaTime;
