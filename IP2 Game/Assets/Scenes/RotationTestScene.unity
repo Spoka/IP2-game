@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 389148165}
   - component: {fileID: 2063005152}
   - component: {fileID: 1019283083}
+  - component: {fileID: 389148170}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -624,10 +625,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0.3
   movementSpeed: 45
-  xMin: 12.292
-  xMax: 16.59
-  zMin: 6.32
-  zMax: 10.45
+  xMin: 12.454
+  xMax: 16.568
+  zMin: 6.347
+  zMax: 10.345
   yValue: 18.891
   rb: {fileID: 2063005152}
 --- !u!65 &389148166
@@ -695,12 +696,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 389148164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.243, y: 18.891, z: 8.18}
+  m_LocalPosition: {x: 14.174, y: 18.891, z: 10.345}
   m_LocalScale: {x: 0.28993246, y: 0.49350208, z: 0.35495603}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &389148170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389148164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef15de7af7891845ad48ed8902ec8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatorScript: {fileID: 2142990851}
+  fearScript: {fileID: 0}
 --- !u!1 &432830604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,6 +1988,10 @@ Prefab:
       propertyPath: rotationWarning
       value: 
       objectReference: {fileID: 1974785981}
+    - target: {fileID: 1598510339648420, guid: a9b72d0ea16098e4aad1c26a12ec34ae, type: 2}
+      propertyPath: m_TagString
+      value: CubePiece
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b72d0ea16098e4aad1c26a12ec34ae, type: 2}
   m_IsPrefabAsset: 0
@@ -2376,7 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d24873ed3cc952409cbbaaf4369bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  other: {fileID: 0}
+  health: {fileID: 0}
   fearBar: {fileID: 746271250}
   fear: 100
 --- !u!1 &1885464728
@@ -2847,6 +2865,7 @@ GameObject:
   - component: {fileID: 2043394306}
   - component: {fileID: 2043394307}
   - component: {fileID: 2043394308}
+  - component: {fileID: 2043394309}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -2864,8 +2883,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.277087, y: 1, z: 1.2540827}
+  m_Center: {x: 0.028017761, y: 0, z: 0.007836556}
 --- !u!23 &2043394303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2915,7 +2934,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043394301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.141, y: 18.821, z: 8.67}
+  m_LocalPosition: {x: 12.46, y: 18.821, z: 6.335}
   m_LocalScale: {x: 0.2549632, y: 0.31932363, z: 0.24046667}
   m_Children:
   - {fileID: 1843214962}
@@ -2935,10 +2954,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0.3
   movementSpeed: 45
-  xMin: 12.292
-  xMax: 16.59
-  zMin: 6.32
-  zMax: 10.45
+  xMin: 12.412
+  xMax: 16.545
+  zMin: 6.335
+  zMax: 10.414
   yValue: 18.891
   rb: {fileID: 2043394307}
 --- !u!54 &2043394307
@@ -2968,6 +2987,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is2Parent: 0
+--- !u!114 &2043394309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043394301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef15de7af7891845ad48ed8902ec8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatorScript: {fileID: 2142990851}
+  fearScript: {fileID: 0}
 --- !u!1 &2050103332
 GameObject:
   m_ObjectHideFlags: 0

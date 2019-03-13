@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FearMeterScript : MonoBehaviour {
 
     // Use this for initialization
-    public LifeLoss other;
+    public LifeLoss health;
 
     public Slider fearBar;
     public float fear;
@@ -23,7 +23,7 @@ public class FearMeterScript : MonoBehaviour {
         fearBar.value = fear;
         if (fear == 0f)
         {
-            other.LoseHealth();
+            health.LoseHealth();
         }
         if (noLight == true)
         {

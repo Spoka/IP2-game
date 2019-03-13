@@ -12,6 +12,7 @@ public class Rotator : MonoBehaviour {
     public float rotationStart = 0f;
     public float autoRotationTimer;
     float rT = 0;
+    public bool isRotating = false;
 
     //When player1 stands on a section for 2 or more seconds, start rotation coroutine 
     private void OnTriggerStay (Collider other)
@@ -63,6 +64,7 @@ public class Rotator : MonoBehaviour {
     {
         float t = 0;
         yield return new WaitForSeconds(1);
+        isRotating = true;
 
         while (t < maxTime)
         {
@@ -82,6 +84,7 @@ public class Rotator : MonoBehaviour {
         }
         rotationWarning.SetActive(false);
         NewRotValues();
+        isRotating = false;
     }
 
     //Update lerp values
