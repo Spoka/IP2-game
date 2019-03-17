@@ -42,27 +42,27 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetKey(KeyCode.Alpha1))
 		{
 			Section1.CubePieceRotation();
-            Section1.isRotating = false;
+            //Section1.isRotating = false;
 		}
 		if (Input.GetKey(KeyCode.Alpha2))
 		{
 			Section2.CubePieceRotation();
-            Section2.isRotating = false;
+            //Section2.isRotating = false;
 		}
 		if (Input.GetKey(KeyCode.Alpha3))
 		{
 			Section3.CubePieceRotation();
-            Section3.isRotating = false;
+            //Section3.isRotating = false;
         }
 		if (Input.GetKey(KeyCode.Alpha4))
 		{
 			Section4.CubePieceRotation();
-            Section4.isRotating = false;
+            //Section4.isRotating = false;
         }
 		if (Input.GetKey(KeyCode.Alpha5))
 		{
 			Section5.CubePieceRotation();
-            Section5.isRotating = false;
+            //Section5.isRotating = false;
         }
 
         if (Input.GetKey(KeyCode.Y))
