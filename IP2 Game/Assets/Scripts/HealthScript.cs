@@ -34,17 +34,28 @@ public class HealthScript : MonoBehaviour {
             healthIcon2.SetActive(false);
             healthIcon1.SetActive(false);
         }
-        else if (health == 2)
+        if (health == 2)
         {
             healthIcon3.SetActive(false);
             healthIcon2.SetActive(true);
             healthIcon1.SetActive(false);
         }
-        else if (health == 1)
+        if (health == 1)
         {
             healthIcon3.SetActive(false);
             healthIcon2.SetActive(false);
             healthIcon1.SetActive(true);
         }
+        if (health == 0)
+        {
+            StartCoroutine("DelayedEndScreen");
+        }
 	}
+
+    IEnumerator DelayedEndScreen()
+    {
+       yield return new WaitForSeconds(.7f);
+        Application.LoadLevel("GameOverScene");
+        yield return null;
+    }
 }
