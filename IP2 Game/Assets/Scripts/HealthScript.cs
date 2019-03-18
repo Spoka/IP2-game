@@ -22,7 +22,7 @@ public class HealthScript : MonoBehaviour {
     {
         health--;
         //rotatorScript.isRotating = false;
-        print("DAMGED!!!");
+        print("DAMAGED!!!");
     }
 
     // Update is called once per frame
