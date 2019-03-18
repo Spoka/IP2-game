@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Alpha1))
+	 /* if (Input.GetKey(KeyCode.Alpha1))
 		{
 			Section1.CubePieceRotation();
             //Section1.isRotating = false;
@@ -72,6 +72,6 @@ public class PlayerScript : MonoBehaviour {
         if (Input.GetKey(KeyCode.N))
         {
             Application.LoadLevel("SuccessScreen");
-        }
+        } */
     }
 }

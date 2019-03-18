@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class FearMeterScript : MonoBehaviour {
 
     // Use this for initialization
-    public LifeLoss health;
-
     public Slider fearBar;
     public float fear;
     private const float timeLapse = 20.0f;
@@ -21,15 +19,22 @@ public class FearMeterScript : MonoBehaviour {
     void Update()
     {
         fearBar.value = fear;
-        if (fear == 0f)
+        if (fear <= 0f)
         {
-            health.LoseHealth();
+            StartCoroutine("DelayedEndScreen");
         }
         if (noLight == true)
         {
             fear -= timeLapse * Time.deltaTime;
             fearBar.value = fear;
         }
+    }
+
+    IEnumerator DelayedEndScreen()
+    {
+        yield return new WaitForSeconds(.7f);
+        Application.LoadLevel("GameOverScene");
+        yield return null;
     }
 
     private void OnTriggerExit(Collider other)
