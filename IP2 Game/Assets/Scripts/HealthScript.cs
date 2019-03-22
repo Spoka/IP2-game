@@ -7,13 +7,16 @@ public class HealthScript : MonoBehaviour {
 
     public Rotator rotatorScript;
     public FearMeterScript fearScript;
-    public GameObject healthIcon3;
-    public GameObject healthIcon2;
-    public GameObject healthIcon1;
     int health;
 
-	// Use this for initialization
-	void Start ()
+    public GameObject ImageOnPanel;  ///set this in the inspector
+    public Texture NewTexture;
+    public Texture NewTexture2;
+    private RawImage img;
+    private RawImage image;
+
+    // Use this for initialization
+    void Start ()
     {
         health = 3;
 	}
@@ -21,40 +24,60 @@ public class HealthScript : MonoBehaviour {
     public void GetDamage()
     {
         health--;
-        //rotatorScript.isRotating = false;
+       
         print("DAMAGED!!!");
+
+        if (health == 2)
+        {
+            img = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+            img.texture = (Texture)NewTexture;
+            print("Hurt!!!");
+        }
+
+        if (health == 1)
+        {
+            image = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+            image.texture = (Texture)NewTexture2;
+            print("Dead!!!");
+        }
+
+        if (health == 0)
+        {
+            StartCoroutine("DelayedEndScreen");
+        }
     }
 
     // Update is called once per frame
     void Update ()
     {
-		if (health == 3)
+     /* if (health == 3f)
         {
-            healthIcon3.SetActive(true);
-            healthIcon2.SetActive(false);
-            healthIcon1.SetActive(false);
+          
         }
-        if (health == 2)
+
+        if (health == 2f)
         {
-            healthIcon3.SetActive(false);
-            healthIcon2.SetActive(true);
-            healthIcon1.SetActive(false);
+            img = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+            img.texture = (Texture)NewTexture;
+            print("Hurt!!!");
         }
-        if (health == 1)
+        
+        if (health == 1f)
         {
-            healthIcon3.SetActive(false);
-            healthIcon2.SetActive(false);
-            healthIcon1.SetActive(true);
+            image = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+            image.texture = (Texture)NewTexture2;
+            print("Dead!!!");
         }
-        if (health == 0)
+
+        if (health == 0f)
         {
             StartCoroutine("DelayedEndScreen");
-        }
+        } */
 	}
 
     IEnumerator DelayedEndScreen()
     {
-       yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(.7f);
         Application.LoadLevel("GameOverScene");
         yield return null;
     }

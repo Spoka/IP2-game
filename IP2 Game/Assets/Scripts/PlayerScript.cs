@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (isParent == false)
             { 
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
                     other.transform.SetParent(gameObject.transform);
                     isParent = true;

@@ -26,7 +26,7 @@ public class Player2Movement : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().position = new Vector3(Mathf.Clamp(GetComponent<Rigidbody>().position.x, xMin, xMax), yValue, Mathf.Clamp(GetComponent<Rigidbody>().position.z, zMin, zMax));
+        gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, xMin, xMax), yValue, Mathf.Clamp(gameObject.transform.position.z, zMin, zMax));
         movementVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow) && canMove)
         {

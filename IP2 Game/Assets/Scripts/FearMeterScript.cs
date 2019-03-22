@@ -8,7 +8,7 @@ public class FearMeterScript : MonoBehaviour {
     // Use this for initialization
     public Slider fearBar;
     public float fear;
-    private const float timeLapse = 20.0f;
+    private const float timeLapse = 10.0f;
     bool noLight = false;
 
     void Start()
@@ -21,21 +21,21 @@ public class FearMeterScript : MonoBehaviour {
         fearBar.value = fear;
         if (fear <= 0f)
         {
-            StartCoroutine("DelayedEndScreen");
+           StartCoroutine("DelayedEndScreen");
         }
         if (noLight == true)
         {
             fear -= timeLapse * Time.deltaTime;
             fearBar.value = fear;
         }
+        if (noLight == false)
+        {
+            fear += timeLapse * Time.deltaTime;
+            fearBar.value = fear;
+        }
     }
 
-    IEnumerator DelayedEndScreen()
-    {
-        yield return new WaitForSeconds(.7f);
-        Application.LoadLevel("GameOverScene");
-        yield return null;
-    }
+  
 
     private void OnTriggerExit(Collider other)
     {
@@ -46,18 +46,19 @@ public class FearMeterScript : MonoBehaviour {
             //fear -= timeLapse * Time.deltaTime;
             noLight = true;
         }
-
-        if(fear == 50)
-        {
-            print("fear to 50");
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             noLight = false;
-            fear = 100f;
         }
+    }
+
+    IEnumerator DelayedEndScreen()
+    {
+        yield return new WaitForSeconds(.7f);
+        Application.LoadLevel("GameOverScene");
+        yield return null;
     }
 }

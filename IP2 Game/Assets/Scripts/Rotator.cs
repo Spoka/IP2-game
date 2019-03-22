@@ -18,7 +18,7 @@ public class Rotator : MonoBehaviour {
     //When player1 stands on a section for 2 or more seconds, start rotation coroutine 
     private void OnTriggerStay (Collider other)
     {
-        if (other.tag == "Player2")
+        if (other.tag == "Player")
         {
             rT += Time.deltaTime;
             if (rT >= autoRotationTimer)
@@ -91,6 +91,7 @@ public class Rotator : MonoBehaviour {
             }
             yield return null;
         }
+        isRotating = false;
         rotationWarning.SetActive(false);
         NewRotValues();
         //isRotating = false;

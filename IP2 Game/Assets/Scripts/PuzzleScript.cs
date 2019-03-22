@@ -6,6 +6,9 @@ public class PuzzleScript : MonoBehaviour {
 
     public PlayerScript playerScript;
     public Player2Script player2Script;
+    public GameObject placedStuff;
+    public bool isPlaced = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -13,11 +16,12 @@ public class PuzzleScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Stuff")
+        if (other.gameObject == placedStuff)
         {
             if (playerScript.isParent == true || player2Script.is2Parent == true)
             {
                 other.transform.SetParent(gameObject.transform);
+                isPlaced = true;
             }
         }
     }

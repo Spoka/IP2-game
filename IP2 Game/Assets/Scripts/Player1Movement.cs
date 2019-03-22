@@ -17,18 +17,16 @@ public class Player1Movement : MonoBehaviour
     public float zMin;
     public float zMax;
     public float yValue;
-    public Rigidbody rb;
 
 
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
     }
    
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().position = new Vector3(Mathf.Clamp(GetComponent<Rigidbody>().position.x, xMin, xMax), yValue, Mathf.Clamp(GetComponent<Rigidbody>().position.z, zMin, zMax));
+        gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, xMin, xMax), yValue, Mathf.Clamp(gameObject.transform.position.z, zMin, zMax));
 
         movementVelocity = Vector3.zero;
 
