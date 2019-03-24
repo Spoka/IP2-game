@@ -15,6 +15,8 @@ public class HealthScript : MonoBehaviour {
     private RawImage img;
     private RawImage image;
 
+    public AudioSource kidOof;
+
     // Use this for initialization
     void Start ()
     {
@@ -26,6 +28,8 @@ public class HealthScript : MonoBehaviour {
         health--;
        
         print("DAMAGED!!!");
+
+        kidOof.Play(0);
 
         if (health == 2)
         {
