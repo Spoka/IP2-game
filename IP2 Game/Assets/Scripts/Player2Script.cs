@@ -6,6 +6,8 @@ public class Player2Script : MonoBehaviour {
 
     public bool is2Parent = false;
 
+    public AudioSource audioRotWarning;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Stuff")
