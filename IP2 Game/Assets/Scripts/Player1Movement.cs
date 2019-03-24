@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player1Movement : MonoBehaviour
 {
+    public float speed;
 
     bool canMove = true;
 
@@ -32,10 +34,10 @@ public class Player1Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) && canMove)
         {
-            movementVelocity.z = 1.0f;
+            movementVelocity.z = ++movementVelocity.z;
             canMove = false;
 
-            Invoke("CooledDown", coolDown);
+           Invoke("CooledDown", coolDown);
         }
         if (Input.GetKey(KeyCode.D) && canMove)
         {
@@ -46,7 +48,9 @@ public class Player1Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W) && canMove)
         {
+          
             movementVelocity.x = 1.0f;
+           
             canMove = false;
 
             Invoke("CooledDown", coolDown);
@@ -58,16 +62,24 @@ public class Player1Movement : MonoBehaviour
 
             Invoke("CooledDown", coolDown);
         }
+
+        if (Input.GetKey(KeyCode.H)&& canMove)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            canMove = false;
+
+            Invoke("CooledDown", coolDown);
+        }
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
 
-        if (Input.GetKey(KeyCode.E))
+       /* if (Input.GetKey(KeyCode.E))
         {
             transform.Rotate(0.0f, 200 * Time.deltaTime, 0.0f);
         }
         else if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        }
+        }*/
     }
 
     void CooledDown()
