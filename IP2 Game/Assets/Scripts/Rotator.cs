@@ -8,16 +8,17 @@ public class Rotator : MonoBehaviour {
     public PlayerScript playerScript;
     public Player2Script player2Script;
     public HealthScript healthScript;
+    public WarnimationScript warningAnimation;
 
     public GameObject rotationWarning;
 
-    public float rotationAngle = 90f;
-    public float rotationStart = 0f;
+    float rotationAngle = 90f;
+    float rotationStart = 0f;
     public float autoRotationTimer;
     float rT = 0;
     public bool isRotating = false;
 
-    //When player1 stands on a section for 2 or more seconds, start rotation coroutine 
+    //When player1 stands on a section for () or more seconds, start rotation coroutine 
     private void OnTriggerStay (Collider other)
     {
         if (other.tag == "Player")
@@ -25,8 +26,11 @@ public class Rotator : MonoBehaviour {
             rT += Time.deltaTime;
             if (rT >= autoRotationTimer)
             {
-                rotationWarning.SetActive(true);
+                print("called" + rT);
+                //rotationWarning.SetActive(true);
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
+                //StartCoroutine("DelayedWarn");
+                warningAnimation.rotAnimation();
                 player2Script.audioRotWarning.Play(0);
                 rT = 0;
             }
@@ -39,32 +43,29 @@ public class Rotator : MonoBehaviour {
                 isRotating = false;
             }
         }
-    }
-
-    //Child Stuff object to the section it's in
-    private void OnTriggerEnter(Collider other)
-    {
+        //Child Stuff object to the section it's in
         if (other.tag == "Stuff")
         {
             if (playerScript.isParent == false && player2Script.is2Parent == false)
             {
                 other.transform.SetParent(gameObject.transform);
-            }           
+            }
         }
     }
 
     //Reset rotation timer if player1 exits the section
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player2")
+        if (other.tag == "Player")
         {
-            if (rT <= 1.5f)
+            if (rT <= autoRotationTimer)
             {
                 rT = 0;
             }
         }
     }
 
+    //Public method to call the rotation from outside the script, should be unused in the final state of the game
     public void CubePieceRotation()
     {
         StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
@@ -74,14 +75,15 @@ public class Rotator : MonoBehaviour {
     //Rotation coroutine --- Lerp the section, show rotation warning, call method that updates lerp values
     IEnumerator  NiceRotation(float start, float end, float maxTime)
     {
+        //print("called" + rT);
         float t = 0;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         isRotating = true;
-
+        
         while (t < maxTime)
         {
-            t += Time.deltaTime*2;
-            //print("called");
+            t += Time.deltaTime;
+            
             Quaternion rot = GetComponent<Transform>().rotation;
             
             rot.x = Mathf.Lerp(start, end, t*t);
@@ -91,13 +93,20 @@ public class Rotator : MonoBehaviour {
             if(t >= maxTime)
             {
                 rot.x = end;
+                isRotating = false;
+                //rT = 0;
             }
             yield return null;
         }
-        isRotating = false;
+        //isRotating = false;
         rotationWarning.SetActive(false);
         NewRotValues();
-        //isRotating = false;
+    }
+
+    IEnumerator DelayedWarn()
+    {
+        yield return new WaitForSeconds(3);
+        warningAnimation.rotAnimation();
     }
 
     //Update lerp values

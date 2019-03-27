@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (isParent == false)
             { 
-                if (Input.GetKey(KeyCode.LeftShift))
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button2))
                 {
                     other.transform.SetParent(gameObject.transform);
                     isParent = true;
@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour {
             }
             else if (isParent == true)
             {
-                if (Input.GetKey(KeyCode.LeftControl))
+                if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.Joystick1Button1))
                 {
                     other.transform.parent = null;
                     isParent = false;

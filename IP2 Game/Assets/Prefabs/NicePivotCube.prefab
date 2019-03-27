@@ -1033,10 +1033,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 90
-  rotationStart: 0
   autoRotationTimer: 2
+  isRotating: 0
 --- !u!114 &114146547915061670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1050,10 +1051,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 90
-  rotationStart: 0
   autoRotationTimer: 2
+  isRotating: 0
 --- !u!114 &114450999001550784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1067,10 +1069,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 0
-  rotationStart: 0
   autoRotationTimer: 0
+  isRotating: 0
 --- !u!114 &114544977906511190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1084,10 +1087,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 90
-  rotationStart: 0
   autoRotationTimer: 2
+  isRotating: 0
 --- !u!114 &114685618256914960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1101,10 +1105,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 90
-  rotationStart: 0
   autoRotationTimer: 2
+  isRotating: 0
 --- !u!114 &114986439819525718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1118,7 +1123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   player2Script: {fileID: 0}
+  healthScript: {fileID: 0}
+  warningAnimation: {fileID: 0}
   rotationWarning: {fileID: 0}
-  rotationAngle: 90
-  rotationStart: 0
   autoRotationTimer: 2
+  isRotating: 0

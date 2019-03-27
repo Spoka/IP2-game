@@ -28,44 +28,56 @@ public class Player2Movement : MonoBehaviour {
     {
         gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, xMin, xMax), yValue, Mathf.Clamp(gameObject.transform.position.z, zMin, zMax));
         movementVelocity = Vector3.zero;
-        if (Input.GetKey(KeyCode.UpArrow) && canMove)
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical2") > 0)
         {
-            movementVelocity.x = 1.0f;
-            canMove = false;
+            if (canMove)
+            {
+                movementVelocity.x = 1.0f;
+                canMove = false;
 
-            Invoke("CooledDown", coolDown);
+                Invoke("CooledDown", coolDown);
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow) && canMove)
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical2") < 0)
         {
-            movementVelocity.x = -1.0f;
-            canMove = false;
+            if (canMove)
+            {
+                movementVelocity.x = -1.0f;
+                canMove = false;
 
-            Invoke("CooledDown", coolDown);
+                Invoke("CooledDown", coolDown);
+            }
         }
-        if (Input.GetKey(KeyCode.RightArrow) && canMove)
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal2") > 0)
         {
-            movementVelocity.z = -1.0f;
-            canMove = false;
+            if (canMove)
+            {
+                movementVelocity.z = -1.0f;
+                canMove = false;
 
-            Invoke("CooledDown", coolDown);
+                Invoke("CooledDown", coolDown);
+            }
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && canMove)
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal2") < 0)
         {
-            movementVelocity.z = 1.0f;
-            canMove = false;
+            if (canMove)
+            {
+                movementVelocity.z = 1.0f;
+                canMove = false;
 
-            Invoke("CooledDown", coolDown);
+                Invoke("CooledDown", coolDown);
+            }
         }
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
 
-        if (Input.GetKey(KeyCode.M))
+      /*  if (Input.GetKey(KeyCode.M))
         {
             transform.Rotate(0.0f, 200 * Time.deltaTime, 0.0f);
         }
         else if (Input.GetKey(KeyCode.N))
         {
             transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        }
+        }*/
     }
 
     void CooledDown()

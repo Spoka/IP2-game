@@ -9,9 +9,10 @@ public class HealthScript : MonoBehaviour {
     public FearMeterScript fearScript;
     int health;
 
-    public GameObject ImageOnPanel;  ///set this in the inspector
+    public GameObject ImageOnPanel;  //set this in the inspector
     public Texture NewTexture;
     public Texture NewTexture2;
+    public Texture NewTexture3;
     private RawImage img;
     private RawImage image;
 
@@ -47,6 +48,8 @@ public class HealthScript : MonoBehaviour {
 
         if (health == 0)
         {
+            image = (RawImage)ImageOnPanel.GetComponent<RawImage>();
+            image.texture = (Texture)NewTexture3;
             StartCoroutine("DelayedEndScreen");
         }
     }
@@ -54,29 +57,7 @@ public class HealthScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-     /* if (health == 3f)
-        {
-          
-        }
-
-        if (health == 2f)
-        {
-            img = (RawImage)ImageOnPanel.GetComponent<RawImage>();
-            img.texture = (Texture)NewTexture;
-            print("Hurt!!!");
-        }
-        
-        if (health == 1f)
-        {
-            image = (RawImage)ImageOnPanel.GetComponent<RawImage>();
-            image.texture = (Texture)NewTexture2;
-            print("Dead!!!");
-        }
-
-        if (health == 0f)
-        {
-            StartCoroutine("DelayedEndScreen");
-        } */
+     
 	}
 
     IEnumerator DelayedEndScreen()

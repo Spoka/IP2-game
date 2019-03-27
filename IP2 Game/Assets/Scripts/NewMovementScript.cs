@@ -4,39 +4,24 @@ using UnityEngine;
 
 public class NewMovementScript : MonoBehaviour
 {
-    /*
 
-	// Use this for initialization
-	void Start () {
-        Start_Pos = transform.position;
+    Vector3 End_Pos;
+    Vector3 Start_Pos;
+    float fraction_of_the_way_there;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKey(KeyCode.H))
-        {
-            End_Pos = transform.position + new Vector3(0, 0, 5);
-            Move += 0.01f;
-            transform.position = Vector3.Lerp(Start_Pos, End_Pos, Move);
-        }
-	}
-}
-*/
-
-    public float speed;
-
-    void Start()
+void Start()
     {
-
-
+        Start_Pos = transform.position;
+        End_Pos = transform.position + new Vector3(2, 0, 0);
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            fraction_of_the_way_there += 0.80f; //Adjust this for how fast you want it to be.
+            transform.position = Vector3.Lerp(Start_Pos, End_Pos, fraction_of_the_way_there);
         }
     }
-
+    
 }
+

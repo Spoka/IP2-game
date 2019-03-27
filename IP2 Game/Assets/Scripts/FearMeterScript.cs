@@ -30,7 +30,7 @@ public class FearMeterScript : MonoBehaviour {
         }
         if (noLight == false)
         {
-            fear += timeLapse * Time.deltaTime;
+            fear += timeLapse * Time.deltaTime *2;
             fearBar.value = fear;
         }
     }
