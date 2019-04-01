@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44771147, g: 0.49335033, b: 0.55206573, a: 1}
+  m_IndirectSpecularColor: {r: 0.07624715, g: 0.0710792, b: 0.054645598, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,13 +350,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 40986623}
-  m_LocalRotation: {x: 0.08922791, y: 0.18186189, z: -0.37590876, w: 0.90424407}
+  m_LocalRotation: {x: -0.15371609, y: 0.08764488, z: -0.34381884, w: 0.92221385}
   m_LocalPosition: {x: 6.07, y: 20.53, z: 11.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 17.343, y: 15.919001, z: -42.704002}
+  m_LocalEulerAnglesHint: {x: -12.9, y: 15.919001, z: -42.704002}
 --- !u!1 &92945746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   placedStuff: {fileID: 434994270}
   isPlaced: 0
 --- !u!65 &370635200
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   placedStuff: {fileID: 2013022130}
   isPlaced: 0
 --- !u!65 &899233547
@@ -2941,7 +2941,7 @@ Prefab:
     - target: {fileID: 135173710509534468, guid: a72207f91df816c4b88d4abd6b6c6638,
         type: 2}
       propertyPath: m_Radius
-      value: 2.01
+      value: 2.53
       objectReference: {fileID: 0}
     - target: {fileID: 108826260528996540, guid: a72207f91df816c4b88d4abd6b6c6638,
         type: 2}
@@ -2981,6 +2981,30 @@ Prefab:
       propertyPath: bearAnimator
       value: 
       objectReference: {fileID: 1195040644}
+    - target: {fileID: 108826260528996540, guid: a72207f91df816c4b88d4abd6b6c6638,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125730763302538, guid: a72207f91df816c4b88d4abd6b6c6638, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108826260528996540, guid: a72207f91df816c4b88d4abd6b6c6638,
+        type: 2}
+      propertyPath: m_SpotAngle
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 135173710509534468, guid: a72207f91df816c4b88d4abd6b6c6638,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135173710509534468, guid: a72207f91df816c4b88d4abd6b6c6638,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 2.27
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114455236199393196, guid: a72207f91df816c4b88d4abd6b6c6638, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a72207f91df816c4b88d4abd6b6c6638, type: 2}
@@ -3364,7 +3388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   healthScript: {fileID: 1625782491}
   warningAnimation: {fileID: 1046374527}
   rotationWarning: {fileID: 1974785981}
@@ -3480,7 +3504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   healthScript: {fileID: 1625782491}
   warningAnimation: {fileID: 8936051}
   rotationWarning: {fileID: 1974785981}
@@ -3905,7 +3929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   healthScript: {fileID: 1625782491}
   warningAnimation: {fileID: 265280137}
   rotationWarning: {fileID: 1974785981}
@@ -4242,7 +4266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   healthScript: {fileID: 1625782491}
   warningAnimation: {fileID: 963449116}
   rotationWarning: {fileID: 1974785981}
@@ -4888,7 +4912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   placedStuff: {fileID: 850208106}
   isPlaced: 0
 --- !u!65 &2055768738
@@ -5114,7 +5138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   placedStuff: {fileID: 1407811971}
   isPlaced: 0
 --- !u!65 &2098610052
@@ -5353,7 +5377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1625782492}
-  player2Script: {fileID: 0}
+  player2Script: {fileID: 1938421429}
   healthScript: {fileID: 1625782491}
   warningAnimation: {fileID: 1600158884}
   rotationWarning: {fileID: 1974785981}

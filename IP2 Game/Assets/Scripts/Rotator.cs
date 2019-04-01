@@ -35,7 +35,7 @@ public class Rotator : MonoBehaviour {
                 rT = 0;
             }
         }
-        if (other.tag == "Player" || other.tag == "Player2")
+        if (other.tag == "Player"/* || other.tag == "Player2"*/)
         {
             if (isRotating == true)
             {
