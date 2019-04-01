@@ -9,11 +9,6 @@ public class PuzzleScript : MonoBehaviour {
     public GameObject placedStuff;
     public bool isPlaced = false;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == placedStuff)
@@ -22,11 +17,9 @@ public class PuzzleScript : MonoBehaviour {
             {
                 other.transform.SetParent(gameObject.transform);
                 isPlaced = true;
+                playerScript.isParent = false;
+                player2Script.is2Parent = false;
             }
         }
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

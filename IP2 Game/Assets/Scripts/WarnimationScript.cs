@@ -16,16 +16,4 @@ public class WarnimationScript : MonoBehaviour {
     {
         warningAnim.SetTrigger("Warning");
     }
-    
-   /* IEnumerator DelayedWarn()
-    {
-        yield return new WaitForSeconds(1.5f);
-        warningAnim.Play("WarningShake");
-        yield return null;
-    }*/
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

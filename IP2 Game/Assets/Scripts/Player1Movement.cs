@@ -20,6 +20,7 @@ public class Player1Movement : MonoBehaviour
     public float zMax;
     public float yValue;
 
+    public Animator KidAnimator;
 
     // Use this for initialization
     void Start()
@@ -42,6 +43,7 @@ public class Player1Movement : MonoBehaviour
                 Invoke("CooledDown", coolDown);
             }
         }
+
         if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal1") > 0)
         {
             if (canMove)
@@ -52,16 +54,19 @@ public class Player1Movement : MonoBehaviour
                 Invoke("CooledDown", coolDown);
             }
         }
+
         if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical1") > 0)
         {
             if (canMove)
             {
+                //KidAnimator.SetTrigger("Walking");
                 movementVelocity.x = 1.0f;
                 canMove = false;
 
                 Invoke("CooledDown", coolDown);
             }
         }
+
         if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical1") < 0)
         {
             if (canMove)
@@ -73,17 +78,7 @@ public class Player1Movement : MonoBehaviour
             }
         }
 
-      
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
-
-       /* if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(0.0f, 200 * Time.deltaTime, 0.0f);
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        }*/
     }
 
     void CooledDown()

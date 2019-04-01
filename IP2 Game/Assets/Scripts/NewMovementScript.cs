@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class NewMovementScript : MonoBehaviour
 {
-
     Vector3 End_Pos;
     Vector3 Start_Pos;
     float fraction_of_the_way_there;
 
-void Start()
+    void Start()
     {
         Start_Pos = transform.position;
         End_Pos = transform.position + new Vector3(2, 0, 0);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))

@@ -10,6 +10,7 @@ public class FearMeterScript : MonoBehaviour {
     public float fear;
     private const float timeLapse = 10.0f;
     bool noLight = false;
+    public GameObject PlayerCharacter1;
 
     void Start()
     {
@@ -18,7 +19,6 @@ public class FearMeterScript : MonoBehaviour {
 
     void Update()
     {
-        fearBar.value = fear;
         if (fear <= 0f)
         {
            StartCoroutine("DelayedEndScreen");
@@ -33,23 +33,20 @@ public class FearMeterScript : MonoBehaviour {
             fear += timeLapse * Time.deltaTime *2;
             fearBar.value = fear;
         }
+        fearBar.value = fear;
     }
-
-  
 
     private void OnTriggerExit(Collider other)
     {
         
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject == PlayerCharacter1)
         {
-            //fear = fear - lT / Time.deltaTime;
-            //fear -= timeLapse * Time.deltaTime;
             noLight = true;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject == PlayerCharacter1)
         {
             noLight = false;
         }

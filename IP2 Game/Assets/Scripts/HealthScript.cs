@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour {
 
-    public Rotator rotatorScript;
     public FearMeterScript fearScript;
     int health;
 
@@ -53,12 +52,6 @@ public class HealthScript : MonoBehaviour {
             StartCoroutine("DelayedEndScreen");
         }
     }
-
-    // Update is called once per frame
-    void Update ()
-    {
-     
-	}
 
     IEnumerator DelayedEndScreen()
     {

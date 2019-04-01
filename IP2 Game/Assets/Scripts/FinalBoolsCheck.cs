@@ -9,27 +9,33 @@ public class FinalBoolsCheck : MonoBehaviour {
     public PuzzleScript puzzleChair;
     public PuzzleScript puzzleSofa;
     public PuzzleScript puzzleLibrary;
-    public PuzzleScript puzzleLamp;
     public PuzzleScript puzzleWardrobe;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
+    public Animator DoorOpener;
+
 	// Update is called once per frame
 	void Update ()
     {
-		if (puzzleBed.isPlaced == true && puzzleChair.isPlaced == true && puzzleDesk.isPlaced == true && puzzleLamp.isPlaced == true && puzzleLibrary.isPlaced == true && puzzleSofa.isPlaced == true && puzzleWardrobe.isPlaced == true)
+        if (puzzleBed.isPlaced == true && puzzleChair.isPlaced == true && puzzleDesk.isPlaced == true && puzzleLibrary.isPlaced == true && puzzleSofa.isPlaced == true && puzzleWardrobe.isPlaced == true)
         {
-            StartCoroutine("DelayedVictoryScreen");
+            DoorOpener.SetTrigger("LevelCompleted");
         }
-	}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (puzzleBed.isPlaced == true && puzzleChair.isPlaced == true && puzzleDesk.isPlaced == true && puzzleLibrary.isPlaced == true && puzzleSofa.isPlaced == true && puzzleWardrobe.isPlaced == true)
+        {
+            if (other.tag == "Player" || other.tag == "Player2")
+            {
+                StartCoroutine("DelayedVictoryScreen");
+            }
+        }
+    }
 
     IEnumerator DelayedVictoryScreen()
     {
-        new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(.5f);
         Application.LoadLevel("SuccessScreen");
-        yield return null;
     }
 }

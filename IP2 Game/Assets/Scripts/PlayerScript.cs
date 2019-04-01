@@ -9,12 +9,6 @@ public class PlayerScript : MonoBehaviour {
     //while being grabbed by the player
 
     public bool isParent = false;
-  
-  /*public Rotator Section1;
-	public Rotator Section2;
-	public Rotator Section3;
-	public Rotator Section4;
-	public Rotator Section5;*/
 
     private void OnTriggerStay(Collider other)
     {
@@ -37,43 +31,5 @@ public class PlayerScript : MonoBehaviour {
                 }
             } 
         }
-    }
-	
-	void Update()
-	{
-	 /* if (Input.GetKey(KeyCode.Alpha1))
-		{
-			Section1.CubePieceRotation();
-            //Section1.isRotating = false;
-		}
-		if (Input.GetKey(KeyCode.Alpha2))
-		{
-			Section2.CubePieceRotation();
-            //Section2.isRotating = false;
-		}
-		if (Input.GetKey(KeyCode.Alpha3))
-		{
-			Section3.CubePieceRotation();
-            //Section3.isRotating = false;
-        }
-		if (Input.GetKey(KeyCode.Alpha4))
-		{
-			Section4.CubePieceRotation();
-            //Section4.isRotating = false;
-        }
-		if (Input.GetKey(KeyCode.Alpha5))
-		{
-			Section5.CubePieceRotation();
-            //Section5.isRotating = false;
-        }
-
-        if (Input.GetKey(KeyCode.Y))
-        {
-            Application.LoadLevel("GameOverScene");
-        }
-        if (Input.GetKey(KeyCode.N))
-        {
-            Application.LoadLevel("SuccessScreen");
-        } */
     }
 }

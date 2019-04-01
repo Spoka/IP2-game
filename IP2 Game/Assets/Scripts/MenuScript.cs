@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     public void LoadMainLevel()
     {
         Application.LoadLevel("RotationTestScene");
@@ -25,7 +16,6 @@ public class MenuScript : MonoBehaviour {
     {
         Application.LoadLevel("MenuScene");
     }
-
     public void QuitGame()
     {
         Application.Quit();

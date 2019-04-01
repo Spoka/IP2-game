@@ -26,7 +26,7 @@ public class Rotator : MonoBehaviour {
             rT += Time.deltaTime;
             if (rT >= autoRotationTimer)
             {
-                print("called" + rT);
+                //print("called" + rT);
                 //rotationWarning.SetActive(true);
                 StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
                 //StartCoroutine("DelayedWarn");
@@ -66,11 +66,10 @@ public class Rotator : MonoBehaviour {
     }
 
     //Public method to call the rotation from outside the script, should be unused in the final state of the game
-    public void CubePieceRotation()
+    public void CubeRotation()
     {
         StartCoroutine(NiceRotation(rotationStart, rotationAngle, 1.0f));
     }
-  
 
     //Rotation coroutine --- Lerp the section, show rotation warning, call method that updates lerp values
     IEnumerator  NiceRotation(float start, float end, float maxTime)
@@ -101,12 +100,6 @@ public class Rotator : MonoBehaviour {
         //isRotating = false;
         rotationWarning.SetActive(false);
         NewRotValues();
-    }
-
-    IEnumerator DelayedWarn()
-    {
-        yield return new WaitForSeconds(3);
-        warningAnimation.rotAnimation();
     }
 
     //Update lerp values

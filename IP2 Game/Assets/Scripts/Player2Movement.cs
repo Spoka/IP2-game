@@ -16,14 +16,9 @@ public class Player2Movement : MonoBehaviour {
     public float zMin;
     public float zMax;
     public float yValue;
-    public Rigidbody rb;
 
-    // Use this for initialization
-    void Start()
-    {
+    public Animator bearAnimator;
 
-        rb = GetComponent<Rigidbody>();
-    }
     void FixedUpdate()
     {
         gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, xMin, xMax), yValue, Mathf.Clamp(gameObject.transform.position.z, zMin, zMax));
@@ -32,9 +27,11 @@ public class Player2Movement : MonoBehaviour {
         {
             if (canMove)
             {
+                bearAnimator.SetTrigger("Walking");
                 movementVelocity.x = 1.0f;
+                
                 canMove = false;
-
+                bearAnimator.SetTrigger("NotWalking");
                 Invoke("CooledDown", coolDown);
             }
         }
@@ -69,15 +66,6 @@ public class Player2Movement : MonoBehaviour {
             }
         }
         transform.Translate(movementVelocity.normalized * Time.deltaTime * movementSpeed, Space.World);
-
-      /*  if (Input.GetKey(KeyCode.M))
-        {
-            transform.Rotate(0.0f, 200 * Time.deltaTime, 0.0f);
-        }
-        else if (Input.GetKey(KeyCode.N))
-        {
-            transform.Rotate(0.0f, -200 * Time.deltaTime, 0.0f);
-        }*/
     }
 
     void CooledDown()
