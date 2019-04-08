@@ -12,6 +12,8 @@ public class FinalBoolsCheck : MonoBehaviour {
     public PuzzleScript puzzleWardrobe;
 
     public Animator DoorOpener;
+    public AudioClip doorScreech;
+    public GameObject doorLight;
 
 	// Update is called once per frame
 	void Update ()
@@ -19,6 +21,8 @@ public class FinalBoolsCheck : MonoBehaviour {
         if (puzzleBed.isPlaced == true && puzzleChair.isPlaced == true && puzzleDesk.isPlaced == true && puzzleLibrary.isPlaced == true && puzzleSofa.isPlaced == true && puzzleWardrobe.isPlaced == true)
         {
             DoorOpener.SetTrigger("LevelCompleted");
+            AudioSource.PlayClipAtPoint(doorScreech, transform.position);
+            doorLight.SetActive(true);
         }
     }
 
