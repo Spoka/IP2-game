@@ -15,12 +15,13 @@ public class HealthScript : MonoBehaviour {
     private RawImage img;
     private RawImage image;
 
-    public AudioSource kidOof;
+    AudioSource kidOof;
 
     // Use this for initialization
     void Start ()
     {
         health = 3;
+        kidOof = GetComponent<AudioSource>();
 	}
 
     public void GetDamage()

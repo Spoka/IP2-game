@@ -11,9 +11,11 @@ public class FearMeterScript : MonoBehaviour {
     private const float timeLapse = 10.0f;
     bool noLight = false;
     public GameObject PlayerCharacter1;
-
+    Animator Anim;
     void Start()
     {
+        Anim = GetComponent<Animator>();
+        Anim.SetTrigger("Call");
         fear = 100f;
     }
 

@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class Rotator : MonoBehaviour {
 
-    public PlayerScript playerScript;
-    public Player2Script player2Script;
-    public HealthScript healthScript;
-    public WarnimationScript warningAnimation;
+    public PlayerScript playerScript; //The Player Script is called to check 
+    public Player2Script player2Script; //if the player is grabbing an object
 
+    public HealthScript healthScript; //The Health Script is called to damage the player
+
+    public WarnimationScript warningAnimation; //The Warnimation Script controls the warning 
+                                                //animation and is called before the rotation
     public GameObject rotationWarning;
 
     float rotationAngle = 90f;
     float rotationStart = 0f;
     public float autoRotationTimer;
-    float rT = 0;
+    public float rT = 0;
     public bool isRotating = false;
 
     //When player1 stands on a section for () or more seconds, start rotation coroutine 
@@ -23,6 +25,7 @@ public class Rotator : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            warningAnimation.softWarn();
             rT += Time.deltaTime;
             if (rT >= autoRotationTimer)
             {
@@ -35,7 +38,7 @@ public class Rotator : MonoBehaviour {
                 rT = 0;
             }
         }
-        if (other.tag == "Player"/* || other.tag == "Player2"*/)
+        if (other.tag == "Player" || other.tag == "Player2")
         {
             if (isRotating == true)
             {
@@ -58,6 +61,7 @@ public class Rotator : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            warningAnimation.endSoftW();
             if (rT <= autoRotationTimer)
             {
                 rT = 0;
@@ -76,7 +80,7 @@ public class Rotator : MonoBehaviour {
     {
         //print("called" + rT);
         float t = 0;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.7f);
         isRotating = true;
         
         while (t < maxTime)
@@ -97,11 +101,10 @@ public class Rotator : MonoBehaviour {
             }
             yield return null;
         }
-        //isRotating = false;
         rotationWarning.SetActive(false);
         NewRotValues();
     }
-
+    
     //Update lerp values
     public void NewRotValues()
     {

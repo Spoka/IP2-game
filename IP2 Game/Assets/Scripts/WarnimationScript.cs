@@ -12,6 +12,16 @@ public class WarnimationScript : MonoBehaviour {
         warningAnim = GetComponent<Animator>();
     }
 	
+    public void softWarn()
+    {
+        warningAnim.SetBool("SoftW", true);
+    }
+
+    public void endSoftW()
+    {
+        warningAnim.SetBool("SoftW", false);
+    }
+
     public void rotAnimation()
     {
         warningAnim.SetTrigger("Warning");

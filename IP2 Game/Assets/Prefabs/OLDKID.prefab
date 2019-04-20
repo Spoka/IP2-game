@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114502675254906670}
   - component: {fileID: 54649510679723038}
   m_Layer: 0
-  m_Name: Player1-Kiddo
+  m_Name: OLDKID
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183f46ec2a259ac4c835bb2d9cae6208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   coolDown: 0.3
   movementSpeed: 38.5
   xMin: 12.793
@@ -177,6 +178,7 @@ MonoBehaviour:
   zMin: 6.424
   zMax: 10.274
   yValue: 18.8984
+  KidAnimator: {fileID: 0}
 --- !u!114 &114502675254906670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,11 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef15de7af7891845ad48ed8902ec8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatorScript: {fileID: 0}
   fearScript: {fileID: 0}
   ImageOnPanel: {fileID: 0}
   NewTexture: {fileID: 2800000, guid: 76ad880b08bacb745b8d0cf6b48e9460, type: 3}
   NewTexture2: {fileID: 2800000, guid: 2c51fd0e5f2dfe047a87c1f70c439437, type: 3}
+  NewTexture3: {fileID: 0}
 --- !u!114 &114898925628468338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,8 +207,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isParent: 0
-  Section1: {fileID: 0}
-  Section2: {fileID: 0}
-  Section3: {fileID: 0}
-  Section4: {fileID: 0}
-  Section5: {fileID: 0}

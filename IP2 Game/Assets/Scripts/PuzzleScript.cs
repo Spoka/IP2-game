@@ -15,10 +15,10 @@ public class PuzzleScript : MonoBehaviour {
         {
             if (playerScript.isParent == true || player2Script.is2Parent == true)
             {
-                other.transform.SetParent(gameObject.transform);
+                //other.transform.SetParent(gameObject.transform);
                 isPlaced = true;
-                playerScript.isParent = false;
-                player2Script.is2Parent = false;
+                //playerScript.isParent = false;
+                //player2Script.is2Parent = false;
             }
         }
     }

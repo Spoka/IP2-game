@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour {
     //while being grabbed by the player
 
     public bool isParent = false;
+    public GameObject kidParent;
 
     private void OnTriggerStay(Collider other)
     {
@@ -18,7 +19,7 @@ public class PlayerScript : MonoBehaviour {
             { 
                 if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button2))
                 {
-                    other.transform.SetParent(gameObject.transform);
+                    other.transform.SetParent(kidParent.transform);
                     isParent = true;
                 }
             }

@@ -6,6 +6,8 @@ public class Player2Script : MonoBehaviour {
 
     public bool is2Parent = false;
 
+    public GameObject teddyParent;
+
     public AudioSource audioRotWarning;
 
     private void OnTriggerStay(Collider other)
@@ -16,7 +18,7 @@ public class Player2Script : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Joystick2Button2))
                 {
-                    other.transform.SetParent(gameObject.transform);
+                    other.transform.SetParent(teddyParent.transform);
                     is2Parent = true;
                 }
             }

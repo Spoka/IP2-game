@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: bbb61cf540781734b83ae84d586ad6c4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: kid:Head
+    100004: kid:HeadTop_End
+    100006: kid:Hips
+    100008: kid:LeftArm
+    100010: kid:LeftFoot
+    100012: kid:LeftForeArm
+    100014: kid:LeftHand
+    100016: kid:LeftHandIndex1
+    100018: kid:LeftHandIndex2
+    100020: kid:LeftHandIndex3
+    100022: kid:LeftHandIndex4
+    100024: kid:LeftLeg
+    100026: kid:LeftShoulder
+    100028: kid:LeftToe_End
+    100030: kid:LeftToeBase
+    100032: kid:LeftUpLeg
+    100034: kid:Neck
+    100036: kid:polySurface1
+    100038: kid:RightArm
+    100040: kid:RightFoot
+    100042: kid:RightForeArm
+    100044: kid:RightHand
+    100046: kid:RightHandIndex1
+    100048: kid:RightHandIndex2
+    100050: kid:RightHandIndex3
+    100052: kid:RightHandIndex4
+    100054: kid:RightLeg
+    100056: kid:RightShoulder
+    100058: kid:RightToe_End
+    100060: kid:RightToeBase
+    100062: kid:RightUpLeg
+    100064: kid:Spine
+    100066: kid:Spine1
+    100068: kid:Spine2
+    400000: //RootNode
+    400002: kid:Head
+    400004: kid:HeadTop_End
+    400006: kid:Hips
+    400008: kid:LeftArm
+    400010: kid:LeftFoot
+    400012: kid:LeftForeArm
+    400014: kid:LeftHand
+    400016: kid:LeftHandIndex1
+    400018: kid:LeftHandIndex2
+    400020: kid:LeftHandIndex3
+    400022: kid:LeftHandIndex4
+    400024: kid:LeftLeg
+    400026: kid:LeftShoulder
+    400028: kid:LeftToe_End
+    400030: kid:LeftToeBase
+    400032: kid:LeftUpLeg
+    400034: kid:Neck
+    400036: kid:polySurface1
+    400038: kid:RightArm
+    400040: kid:RightFoot
+    400042: kid:RightForeArm
+    400044: kid:RightHand
+    400046: kid:RightHandIndex1
+    400048: kid:RightHandIndex2
+    400050: kid:RightHandIndex3
+    400052: kid:RightHandIndex4
+    400054: kid:RightLeg
+    400056: kid:RightShoulder
+    400058: kid:RightToe_End
+    400060: kid:RightToeBase
+    400062: kid:RightUpLeg
+    400064: kid:Spine
+    400066: kid:Spine1
+    400068: kid:Spine2
+    2100000: kid_defaultMat1
+    4300000: kid:polySurface1
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: kid:polySurface1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: <Root Transform>
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
