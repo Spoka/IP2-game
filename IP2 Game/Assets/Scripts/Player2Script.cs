@@ -16,7 +16,7 @@ public class Player2Script : MonoBehaviour {
         {
             if (is2Parent == false)
             {
-                if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Joystick2Button2))
+                if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.Joystick2Button2))
                 {
                     other.transform.SetParent(teddyParent.transform);
                     is2Parent = true;
@@ -24,7 +24,7 @@ public class Player2Script : MonoBehaviour {
             }
             else if (is2Parent == true)
             {
-                if (Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.Joystick2Button1))
+                if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.Joystick2Button1))
                 {
                     other.transform.parent = null;
                     is2Parent = false;

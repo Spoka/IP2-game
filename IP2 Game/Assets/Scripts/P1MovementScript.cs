@@ -11,8 +11,11 @@ public class P1MovementScript : MonoBehaviour
         currentDirection = new Vector3(0, 90, 0);
     Vector3 nextPos, destination, direction;
 
+    Vector3 rayDirection;
+
     public float speed = .75f;
     public float movementUnit = .75f;
+    float rayDistance;
     public PlayerScript playerScript;
 
     bool canMove;
@@ -24,8 +27,7 @@ public class P1MovementScript : MonoBehaviour
         currentDirection = up;
         nextPos = Vector3.forward;
         destination = transform.position;
-        //animatorKid = GetComponent<Animator>();
-        //playerScript = GetComponent<PlayerScript>();
+        rayDistance = movementUnit;
     }
 
     void Update()
@@ -90,10 +92,10 @@ public class P1MovementScript : MonoBehaviour
 
     bool Valid()
     {
-        Ray coolRay = new Ray(transform.position + new Vector3(0, 0.25f, 0), transform.forward);
+        Ray coolRay = new Ray(transform.position + new Vector3(0, 0.25f, 0), nextPos);
         RaycastHit coolHit;
-        Debug.DrawRay(coolRay.origin, coolRay.direction, Color.red);
-        if(Physics.Raycast(coolRay, out coolHit, movementUnit))
+        Debug.DrawRay(coolRay.origin, coolRay.direction, Color.cyan);
+        if(Physics.Raycast(coolRay, out coolHit, rayDistance))
         {
             if(coolHit.collider.tag == "Boundary")
             {
@@ -107,4 +109,3 @@ public class P1MovementScript : MonoBehaviour
         return true;
     }
 }
-

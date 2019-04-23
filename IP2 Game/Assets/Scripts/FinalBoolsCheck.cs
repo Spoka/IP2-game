@@ -23,7 +23,7 @@ public class FinalBoolsCheck : MonoBehaviour {
             DoorOpener.SetTrigger("LevelCompleted");
             AudioSource.PlayClipAtPoint(doorScreech, transform.position);
             doorLight.SetActive(true);
-        }
+        } 
     }
 
     private void OnTriggerEnter(Collider other)

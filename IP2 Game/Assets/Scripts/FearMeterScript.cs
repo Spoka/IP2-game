@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FearMeterScript : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class FearMeterScript : MonoBehaviour {
     void Start()
     {
         Anim = GetComponent<Animator>();
-        Anim.SetTrigger("Call");
+        Anim.SetBool("LightCall", true);
         fear = 100f;
     }
 
@@ -23,7 +24,7 @@ public class FearMeterScript : MonoBehaviour {
     {
         if (fear <= 0f)
         {
-           StartCoroutine("DelayedEndScreen");
+            StartCoroutine("DelayedEndScreen");
         }
         if (noLight == true)
         {
@@ -32,7 +33,7 @@ public class FearMeterScript : MonoBehaviour {
         }
         if (noLight == false && fear <= 100)
         {
-            fear += timeLapse * Time.deltaTime *2;
+            fear += timeLapse * Time.deltaTime * 2;
             fearBar.value = fear;
         }
         fearBar.value = fear;
@@ -40,7 +41,7 @@ public class FearMeterScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        
+
         if (other.gameObject == PlayerCharacter1)
         {
             noLight = true;
@@ -54,10 +55,22 @@ public class FearMeterScript : MonoBehaviour {
         }
     }
 
+    public void StartLightCoroutine()
+    {
+        StartCoroutine("LightBackToFull");
+    }
+
+    IEnumerator LightBackToFull()
+    {
+        Anim.SetBool("LightCall", false);
+        yield return new WaitForSeconds(.75f);
+        Anim.SetBool("LightCall", true);
+    }
+
     IEnumerator DelayedEndScreen()
     {
         yield return new WaitForSeconds(.7f);
-        Application.LoadLevel("GameOverScene");
+        SceneManager.LoadScene("GameOverScene");
         yield return null;
     }
 }

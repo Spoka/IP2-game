@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour {
 
@@ -57,7 +58,7 @@ public class HealthScript : MonoBehaviour {
     IEnumerator DelayedEndScreen()
     {
         yield return new WaitForSeconds(.7f);
-        Application.LoadLevel("GameOverScene");
+        SceneManager.LoadScene("GameOverScene");
         yield return null;
     }
 }

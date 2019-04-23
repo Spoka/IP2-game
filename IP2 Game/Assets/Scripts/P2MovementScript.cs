@@ -13,6 +13,7 @@ public class P2MovementScript : MonoBehaviour {
 
     public float speed = .75f;
     public float movementUnit = .75f;
+    float rayDistance;
     public Player2Script player2Script;
 
     bool canMove;
@@ -23,9 +24,11 @@ public class P2MovementScript : MonoBehaviour {
         currentDirection = up;
         nextPos = Vector3.forward;
         destination = transform.position;
+        rayDistance = movementUnit;
     }
 	
-	void Update () {
+	void Update ()
+    {
         Move();
 	}
 
@@ -86,10 +89,10 @@ public class P2MovementScript : MonoBehaviour {
 
     bool Valid()
     {
-        Ray coolRay = new Ray(transform.position + new Vector3(0, 0.25f, 0), transform.forward);
+        Ray coolRay = new Ray(transform.position + new Vector3(0, 0.25f, 0), nextPos);
         RaycastHit coolHit;
         Debug.DrawRay(coolRay.origin, coolRay.direction, Color.red);
-        if (Physics.Raycast(coolRay, out coolHit, movementUnit))
+        if (Physics.Raycast(coolRay, out coolHit, rayDistance))
         {
             if (coolHit.collider.tag == "Boundary")
             {
